@@ -1,6 +1,6 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import "./globals.css";
+import SidebarNav from "./SidebarNav";
 
 export const metadata: Metadata = {
   title: "AI 회의 분석 시스템",
@@ -21,24 +21,10 @@ export default function RootLayout({
             <div className="p-6 border-b">
               <h1 className="text-2xl font-bold text-blue-600">📋 MeetingAI</h1>
             </div>
-          <nav className="flex-1 p-4 space-y-2">
-   <Link href="/" className="flex items-center gap-3 px-4 py-3 rounded-xl bg-blue-50 text-blue-600 font-medium">
-    📊 대시보드
-  </Link>
-  <Link href="/recording" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
-    🎤 회의 녹음
-  </Link>
-  <Link href="/kanban" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
-    📋 칸반 보드
-  </Link>
-  <Link href="/contribution" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
-    👥 팀 기여도
-  </Link>
-  <Link href="/settings" className="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-gray-100">
-    ⚙️ 설정
-  </Link>
-</nav>
-            
+
+            {/* 클라이언트 컴포넌트로 분리 */}
+            <SidebarNav />
+
             <div className="p-4 border-t">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">신</div>
